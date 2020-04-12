@@ -1,0 +1,18 @@
+! Menuitem for users
+!  12.31.01
+! Freeware - предполагает исходные тексты, но не всегда
+! Shareware - предполагает плату денег
+! Corporative version
+!      - значит все что вы создаете это ваше и вашего работодателя,
+!        если в трудовом не оговорено иначе
+
+TITLE Cam_OPU_(x32)
+
+VERSION 160
+
+BUTTON  Cam5
+LABEL   Изменение скорости шпинделя в операциях.
+ACTION  $UGII_VENDOR_DIR\application\opu_cam5.dll
+BITMAP  $UGII_VENDOR_DIR\application\opu_cam5_speeds.bmp
+
+!================================================================

@@ -1,0 +1,278 @@
+
+typedef enum
+{
+    UF_PARAM_spindle_mode_rpm = 0,
+    UF_PARAM_spindle_mode_css = 1,
+    UF_PARAM_spindle_mode_none = 2
+
+} UF_PARAM_spindle_mode_t;
+
+
+/* UF_PARAM_SPINDLE_DIR_AUTO
+ *
+ *  Description:
+ *  This parameter identifies whether spindle direction is to be evaluated
+ *  automatically.
+ *
+ *  Type: UF_PARAM_type_int
+ *
+ *  Name: Spindle Direction Automatic
+ *  Variable Name: <prefix>_spindle_direction_automatic
+ *
+ *  Possible Values:
+ *     0 = inactive
+ *     1 = active
+ *
+ * 
+ */
+#define UF_PARAM_SPINDLE_DIR_AUTO   4100  /* UF_PARAM_type_int */
+
+
+typedef enum
+{
+    UF_PARAM_spindle_dir_control_none = 0,
+    UF_PARAM_spindle_dir_control_clw,
+    UF_PARAM_spindle_dir_control_cclw
+} UF_PARAM_spindle_dir_control_t;
+
+/* UF_PARAM_SPINDLE_DIR_CONTROL
+ *
+ *  Description:
+ *  This parameter identifies the desired spindle direction if automatic
+ *  spindle direction control is turned off (=0)
+ *
+ *  This parameter is only valid for Turning Operations where 
+ *    UF_PARAM_SPINDLE_DIR_AUTO is set to 0.  For all other cases,
+ *    the spindle direction is specified using UF_PARAM_TL_DIRECTION.
+ *
+ *  Type: UF_PARAM_type_int
+ *
+ *  Name: Spindle Direciton Control
+ *  Variable Name: <prefix>_spindle_direciton_control
+ *
+ *  Possible Values: UF_PARAM_spindle_dir_control_t
+ *
+ * 
+ */
+#define UF_PARAM_SPINDLE_DIR_CONTROL   4101  /* UF_PARAM_type_int */
+
+
+
+/* UF_PARAM_TL_DIRECTION
+ *
+ *  Description:
+ *  This index specifies the direction of rotation of the spindle.
+ *
+ *  Type: UF_PARAM_type_int
+ *
+ *  Name: Tool Direction
+ *  Variable Name: <prefix>_tool_direction
+ *
+ *  Possible Values:
+ *    Valid for cutter type
+ *             UF_CUTTER_TYPE_MILL
+ *             UF_CUTTER_TYPE_DRILL
+ *             UF_CUTTER_TYPE_BARREL
+ *             UF_CUTTER_TYPE_T
+ *
+ * 
+ */
+#define UF_PARAM_TL_DIRECTION   1042  /* UF_PARAM_type_int */
+
+
+
+/* UF_PARAM_SURFACE_SPEED
+ *
+ *  Description:
+ *  This parameter specifies the spindle surface speed
+ *
+ *  Type: UF_PARAM_type_double
+ *
+ *  Name: Surface Speed
+ *  Variable Name: <prefix>_surface_speed
+ *
+ *  Possible Values: All
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SURFACE_SPEED   4003  /* Param_type_double */
+
+/* UF_PARAM_FEED_PER_TOOTH
+ *
+ *  Description:
+ *  This parameter specifies the feed per tooth
+ *
+ *  Type: UF_PARAM_type_double
+ *
+ *  Name: Feed Per Tooth
+ *  Variable Name: <prefix>_feed_per_tooth
+ *
+ *  Possible Values: All
+ *
+ *  Developer:
+ */
+#define UF_PARAM_FEED_PER_TOOTH   4004  /* Param_type_double */
+
+
+/* UF_PARAM_SPINDLE_RPM
+ *
+ *  Description:
+ *  This parameter specifies the spindle speed in RPM
+ *
+ *  Type: UF_PARAM_type_double
+ *
+ *  Name: Spindle RPM
+ *  Variable Name: <prefix>_spindle_rpm
+ *
+ *  Possible Values: All
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_RPM   4005  /* Param_type_double */
+
+
+/* UF_PARAM_SPINDLE_MODE
+ *
+ *  Description:
+ *  This parameter specifies the Spindle Mode
+ *
+ *  Type: UF_PARAM_type_int
+ *
+ *  Name: Spindle Mode
+ *  Variable Name: <prefix>_spindle_mode
+ *
+ *  Possible Values: All
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_MODE   4008  /* UF_PARAM_type_int */
+
+
+/* UF_PARAM_SPINDLE_RANGE_TEXT
+ *
+ *  Description:
+ *  This parameter specifies the Spindle range Text.
+ *
+ *  Type: UF_PARAM_type_string
+ *
+ *  Name: Spindle Range
+ *  Variable Name: <prefix>_spindle_range
+ *
+ *  Possible Values: All
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_RANGE_TEXT   4009  /* UF_PARAM_type_string */
+
+
+/* UF_PARAM_SPINDLE_TEXT
+ *
+ *  Description:
+ *  This parameter specifies the Spindle Text. User can add
+ *  any Major/Minor words apart from std UG spindle Major/Minor words
+ *
+ *  Type: UF_PARAM_type_string
+ *
+ *  Name: Spindle Text
+ *  Variable Name: <prefix>_spindle_text
+ *
+ *  Possible Values: All
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_TEXT   4010  /* UF_PARAM_type_string */
+
+
+/* UF_PARAM_SPINDLE_PRESET_RPM
+ *
+ *  Description:
+ *  This parameter specifies the Spindle preset RPM for 
+ *  Lathe/Turn operations.
+ *
+ *  Type: UF_PARAM_type_double
+ *
+ *  Name: Spindle preset RPM
+ *  Variable Name: <prefix>_spindle_preset_rpm
+ *
+ *  Possible Values: All
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_PRESET_RPM   4011  /* UF_PARAM_type_double */
+
+
+/* UF_PARAM_SPINDLE_MAX_RPM
+ *
+ *  Description:
+ *  This parameter specifies the maximum Spindle RPM .
+ *
+ *  Type: UF_PARAM_type_double
+ *
+ *  Name: Spindle maximum RPM
+ *  Variable Name: <prefix>_spindle_maximum_rpm
+ *
+ *  Possible Values: All
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_MAX_RPM   4012  /* UF_PARAM_type_double */
+
+
+/* UF_PARAM_SPINDLE_RPM_TOG
+ *
+ *  Description:
+ *  This parameter specifies toggle for the spindle speed in RPM
+ *
+ *  Type: UF_PARAM_type_int
+ *
+ *  Name: Spindle RPM Toggle
+ *  Variable Name: <prefix>_spindle_rpm_toggle
+ *
+ *  Possible Values: 
+ *        0 -- Inactive
+ *        1 -- Active
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_RPM_TOG   4013  /* Param_type_double */
+
+
+/* UF_PARAM_SPINDLE_PRESET_RPM_TOG
+ *
+ *  Description:
+ *  This parameter specifies the toggle for Spindle preset RPM in 
+ *  Lathe/Turn operations.
+ *
+ *  Type: UF_PARAM_type_int
+ *
+ *  Name: Spindle preset RPM Toggle
+ *  Variable Name: <prefix>_spindle_preset_rpm_toggle
+ *
+ *  Possible Values: 
+ *        0 -- Inactive
+ *        1 -- Active
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_PRESET_RPM_TOG   4014  /* UF_PARAM_type_int */
+
+
+/* UF_PARAM_SPINDLE_MAX_RPM_TOG
+ *
+ *  Description:
+ *  This parameter specifies the toggle for maximum Spindle RPM .
+ *
+ *  Type: UF_PARAM_type_int
+ *
+ *  Name: Spindle maximum RPM Toggle
+ *  Variable Name: <prefix>_spindle_maximum_rpm_toggle
+ *
+ *  Possible Values:
+ *        0 -- Inactive
+ *        1 -- Active
+ *
+ *  Developer:
+ */
+#define UF_PARAM_SPINDLE_MAX_RPM_TOG   4015  /* UF_PARAM_type_double */
+
+
